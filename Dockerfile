@@ -22,4 +22,4 @@ RUN mkdir -p /opt
 ADD config.yml /opt/config.yml
 ADD action_delete.yml /opt/action_delete.yml
 # ENTRYPOINT ["/usr/local/bin/curator"]
-CMD /usr/local/bin/curator --dry-run --config /opt/config.yml /opt/action_delete.yml
+CMD /usr/local/bin/curator --dry-run --config /opt/config.yml /opt/action_file.yml
