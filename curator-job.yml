@@ -41,8 +41,16 @@ spec:
         resources: {}
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
+        volumeMounts:
+            - mountPath: /opt/
+              name: curator-config
       dnsPolicy: ClusterFirst
       restartPolicy: Never
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
+      volumes:
+        - name: curator-config
+          configMap:
+             name: curator-configmap
+             defaultMode: 420
