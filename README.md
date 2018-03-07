@@ -48,3 +48,7 @@ volumes:
      defaultMode: 420
 [...]
 </pre>
+
+
+1. create ConfigMap: kubectl apply -f curator-config.yml
+1. create Job: kubectl apply -f curator-job.yml 
