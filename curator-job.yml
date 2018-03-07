@@ -52,5 +52,5 @@ spec:
       volumes:
         - name: curator-config
           configMap:
-             name: curator-configmap
+             name: curator-config
              defaultMode: 420
