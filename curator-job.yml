@@ -1,0 +1,32 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: curator
+  namespace: logging
+spec:
+  template:
+    spec:
+      containers:
+      - name: curator
+        image: ubirch/ubirch-elastic-curator-container:latest
+        imagePullPolicy: Always
+        env:
+        - name: NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: NODE_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: ES_LOG_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: logging-config
+              key: logging_host
+        - name: ES_LOG_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: logging-config
+              key: logging_port
+      restartPolicy: Never
