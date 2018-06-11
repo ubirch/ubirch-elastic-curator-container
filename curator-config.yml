@@ -10,7 +10,7 @@ data:
       1:
         action: delete_indices
         description: >-
-          Delete indices older than 14 days (based on index name), for *-logs-2018-02-10
+          Delete indices older than 30 days (based on index name), for *-logs-2018-02-10
           prefixed indices. Ignore the error if the filter does not result in an
           actionable list of indices (ignore_empty_list) and exit cleanly.
         options:
@@ -25,11 +25,11 @@ data:
           direction: older
           timestring: '%Y-%m-%d'
           unit: days
-          unit_count: 14
+          unit_count: 30 
       2:
         action: delete_indices
         description: >-
-          Delete indices older than 14 days (based on index name), for *-logs-2018.02.10
+          Delete indices older than 30 days (based on index name), for *-logs-2018.02.10
           prefixed indices. Ignore the error if the filter does not result in an
           actionable list of indices (ignore_empty_list) and exit cleanly.
         options:
@@ -44,11 +44,11 @@ data:
           direction: older
           timestring: '%Y.%m.%d'
           unit: days
-          unit_count: 14
+          unit_count: 30 
       3:
         action: delete_indices
         description: >-
-          Delete indices older than 14 days (based on index name), for logstash-*
+          Delete indices older than 30 days (based on index name), for logstash-*
           prefixed indices. Ignore the error if the filter does not result in an
           actionable list of indices (ignore_empty_list) and exit cleanly.
         options:
@@ -63,7 +63,7 @@ data:
           direction: older
           timestring: '%Y.%m.%d'
           unit: days
-          unit_count: 14
+          unit_count: 30 
   config.yml: |-
     ---
     client:
